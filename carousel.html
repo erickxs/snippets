@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto|Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Carousel | Erick</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Carousel</h1>
+        <pre >
+            <code class="language-html line-numbers code-toolbar" data-start="1" style="white-space:pre-wrap;">
+                &lt;div id="slider" class="carousel slide" data-ride="carousel"&gt;
+                    &lt;ol class="carousel-indicators"&gt;
+                        &lt;li data-target="#slider" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+                        &lt;li data-target="#slider" data-slide-to="1"&gt;&lt;/li&gt;
+                        &lt;li data-target="#slider" data-slide-to="2"&gt;&lt;/li&gt;
+                    &lt;/ol&gt;
+                    &lt;div class="carousel-inner"&gt;
+                        &lt;div class="carousel-item active"&gt;
+                            &lt;img class="d-block w-100" src="img/slides/slide3.jpg" alt="First slide"&gt;
+                        &lt;/div&gt;
+                        &lt;div class="carousel-item"&gt;
+                            &lt;img class="d-block w-100" src="img/slides/slide2.jpeg" alt="Second slide"&gt;
+                        &lt;/div&gt;
+                        &lt;div class="carousel-item"&gt;
+                            &lt;img class="d-block w-100" src="img/slides/slide3.jpg" alt="Third slide"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;a class="carousel-control-prev" href="#slider" role="button" data-slide="prev"&gt;
+                        &lt;span class="carousel-control-prev-icon" aria-hidden="true"&gt;&lt;/span&gt;
+                        &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a class="carousel-control-next" href="#slider" role="button" data-slide="next"&gt;
+                        &lt;span class="carousel-control-next-icon" aria-hidden="true"&gt;&lt;/span&gt;
+                        &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;!-- .carousel --&gt;
+            </code>
+        </pre>
+        <div class="home"><a href="index.html"><i class="fa fa-home"></i></a></div>
+    </div>
+    
+    <script src="js/prism.js"></script>
+    <script>
+        Prism.plugins.toolbar.registerButton('select-code', function(env) {
+		var button = document.createElement('button');
+		button.innerHTML = 'Select Code';
+
+		button.addEventListener('click', function () {
+			if (document.body.createTextRange) { // ms
+				var range = document.body.createTextRange();
+				range.moveToElementText(env.element);
+				range.select();
+			} else if (window.getSelection) { // moz, opera, webkit
+				var selection = window.getSelection();
+				var range = document.createRange();
+				range.selectNodeContents(env.element);
+				selection.removeAllRanges();
+				selection.addRange(range);
+			}
+		});
+
+		return button;
+	});
+        </script>
+</body>
+</html>
